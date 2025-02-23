@@ -25,7 +25,7 @@ router.post("/login", async(req,res) => {  //router.post() works same as app.pos
         }
 
         //After the above codes authenticate credentials , below code will Generate JWT for authenticated teacher
-        const token = jwt.sign( {id: teacher._id}, process.env.JWT_SECRET, {expiresIn: "2h"} );
+        const token = jwt.sign( {id: teacher._id}, process.env.JWT_SECRET, {expiresIn: "1h"} );
         res.json({token});
     }
     catch(err) {
