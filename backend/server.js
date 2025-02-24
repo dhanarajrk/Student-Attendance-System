@@ -23,6 +23,9 @@ app.use("/api/attendance", attendanceRoutes);   //Attendance Saving route
 import reportRoutes from "./routes/report.js"
 app.use("/api/reports", reportRoutes);   //Report fetching route
 
+import smsRoutes from "./routes/sms.js"
+app.use("/api/sms", smsRoutes);   //SMS Route
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))

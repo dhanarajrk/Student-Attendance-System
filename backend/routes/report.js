@@ -41,6 +41,7 @@ router.get("/", async (req, res) => {
         : "0.00";
 
       return {
+        reportStudentId: student._id,
         rollNumber: student.rollNumber,
         name: student.name,
         className: student.className,
