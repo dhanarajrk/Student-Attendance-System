@@ -28,12 +28,12 @@ jobs:
       - name: 🔄 Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Change to match your project
+          node-version: 18  # Adjust based on your project
 
       - name: 📦 Install Dependencies
         run: npm install
-        working-directory: backend  # Adjust if your backend is inside another folder
+        working-directory: backend  # Ensures it runs inside backend folder
 
       - name: ✅ Run Backend Tests
         run: node tests/index.js
-        working-directory: backend  # Adjust if needed
+        working-directory: backend  # Ensures test runs inside backend folder
