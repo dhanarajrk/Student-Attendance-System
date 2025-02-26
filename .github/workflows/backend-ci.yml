@@ -34,6 +34,10 @@ jobs:
         run: npm install
         working-directory: backend  # Ensures it runs inside backend folder
 
+      - name: 🔍 Debug Environment Variables
+        run: env | grep TWILIO
+        working-directory: backend
+
       - name: ✅ Run Backend Tests
         run: node tests/backendTest.js
         working-directory: backend  # Ensures test runs inside backend folder
