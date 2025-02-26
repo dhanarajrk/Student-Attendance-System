@@ -35,5 +35,5 @@ jobs:
         working-directory: backend  # Ensures it runs inside backend folder
 
       - name: ✅ Run Backend Tests
-        run: node tests/index.js
+        run: node tests/backendTest.js
         working-directory: backend  # Ensures test runs inside backend folder
