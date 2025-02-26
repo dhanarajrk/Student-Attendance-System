@@ -1,5 +1,17 @@
 import request from "supertest";
-import app from "../server.js";
+import { app, mongoose, server } from "../server.js";
+
+beforeAll(async () => {
+  // No need to start the server here; it's already started in server.js
+});
+
+afterAll(async () => {
+  // Close the server
+  await server.close();
+
+  // Close the MongoDB connection
+  await mongoose.connection.close();
+});
 
 describe("GET /", () => {
   it("should return 'Backend is running'", async () => {

@@ -36,5 +36,17 @@ app.get("/", (req, res) => {
     res.send("Backend is running");
   });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export the app and mongoose for testing
+export { app, mongoose };
+
+// Create a server instance (but don't start it yet)
+const server = app.listen(0); // 0 means any available port
+
+// Export the server instance for testing
+export { server };
+
+// Start the server only if this file is run directly (not in test mode)
+if (process.env.NODE_ENV !== "test") {
+  const PORT = process.env.PORT || 5000;
+  server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
