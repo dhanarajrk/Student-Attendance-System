@@ -23,11 +23,12 @@ jobs:
         with:
           node-version: "18"
           cache: "npm"
+          cache-dependency-path: "backend/package-lock.json" # Cache based on backend lock file
 
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./backend
+        working-directory: ./backend # Run npm install in the backend folder
 
       # Step 4: Set up environment variables from GitHub Secrets
       - name: Set up environment variables
@@ -38,9 +39,9 @@ jobs:
           echo "TWILIO_ACCOUNT_SID=${{ secrets.TWILIO_ACCOUNT_SID }}" >> .env
           echo "TWILIO_AUTH_TOKEN=${{ secrets.TWILIO_AUTH_TOKEN }}" >> .env
           echo "TWILIO_PHONE_NUMBER=${{ secrets.TWILIO_PHONE_NUMBER }}" >> .env
-        working-directory: ./backend
+        working-directory: ./backend # Create .env in the backend folder
 
       # Step 5: Run tests
       - name: Run tests
         run: npm test
-        working-directory: ./backend
+        working-directory: ./backend # Run tests in the backend folder
