@@ -36,7 +36,7 @@ jobs:
 
       - name: 🔍 Debug Environment Variables
         run: env | grep TWILIO
-        working-directory: backend
+        working-directory: backend 
 
       - name: ✅ Run Backend Tests
         run: node tests/backendTest.js
