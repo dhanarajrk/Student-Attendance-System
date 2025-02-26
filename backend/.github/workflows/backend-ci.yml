@@ -1,0 +1,39 @@
+name: Backend CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev  # Add other branches if needed
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  backend-test:
+    runs-on: ubuntu-latest
+
+    env:
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+      TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+      TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
+
+    steps:
+      - name: 🛠 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔄 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Change to match your project
+
+      - name: 📦 Install Dependencies
+        run: npm install
+        working-directory: backend  # Adjust if your backend is inside another folder
+
+      - name: ✅ Run Backend Tests
+        run: node tests/index.js
+        working-directory: backend  # Adjust if needed

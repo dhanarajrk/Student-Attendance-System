@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "NODE_ENV=test jest --coverage"
+    "test": "node tests/backendTest.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +18,5 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "twilio": "^5.4.5"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "supertest": "^7.0.0"
   }
 }
