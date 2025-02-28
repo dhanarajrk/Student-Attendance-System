@@ -3,7 +3,7 @@ name: Deploy to AWS EC2
 on:
   push:
     branches:
-      - main  # Runs this workflow when code is pushed to main branch
+      - main  # Runs this workflow when code is pushed to the main branch
 
 jobs:
   deploy:
@@ -15,10 +15,10 @@ jobs:
 
       - name: Set up SSH & Deploy
         run: |
-          echo "${{ secrets.EC2_PRIVATE_KEY }}" > private_key.pem
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
 
-          ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@16.16.247.128 << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@${{ secrets.AWS_HOST }} << 'EOF'
             cd ~/Student-Attendence-Management-System
             git pull origin main
             docker-compose down
