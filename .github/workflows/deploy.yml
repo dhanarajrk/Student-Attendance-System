@@ -1,0 +1,28 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main  # Runs this workflow when code is pushed to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH & Deploy
+        run: |
+          echo "${{ secrets.EC2_PRIVATE_KEY }}" > private_key.pem
+          chmod 600 private_key.pem
+
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@16.16.247.128 << 'EOF'
+            cd ~/Student-Attendence-Management-System
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
+          EOF
+
+          rm -f private_key.pem
