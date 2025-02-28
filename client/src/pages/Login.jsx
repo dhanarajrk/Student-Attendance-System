@@ -14,7 +14,7 @@ function Login() {
           const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/auth/login`, 
           {
             email,
-            password,
+            password, 
           });                                   //post will send email and password to backend /api/auth/login Route
           const { token } = response.data;      //after auth.js runs router.post("/login") teacher authentication, generate JWT token and will be sent from server to client
           localStorage.setItem("token", token); //this token will be saved in localStorage named "token" to use it whenever client wants to request anything to server
