@@ -68,7 +68,7 @@ const ManageStudents = () => {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}api/students`, newStudent);
+            const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/students`, newStudent);
             setStudents([...students, response.data]);
             setNewStudent({ rollNumber: "", name: "", className: "", section: "", parentPhone: "" });
             setShowForm(false);
