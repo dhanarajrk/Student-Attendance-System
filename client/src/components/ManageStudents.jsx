@@ -39,7 +39,7 @@ const ManageStudents = () => {
     const saveEdit = async () => {
         setIsLoading(true);
         try {
-            const response = await axios.put(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/students/${editStudentId}`, editedStudent);
+            const response = await axios.put(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/students/${editStudentId}`, editedStudent);
             setStudents(students.map((s) => (s._id === editStudentId ? response.data : s)));
             setEditStudentId(null);
             setEditedStudent({});
@@ -54,7 +54,7 @@ const ManageStudents = () => {
         if (window.confirm("Are you sure you want to delete this student?")) {
             setIsLoading(true);
             try {
-                await axios.delete(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/students/${id}`);
+                await axios.delete(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/students/${id}`);
                 setStudents(students.filter((s) => s._id !== id));
             } catch (err) {
                 console.error("Failed to delete student:", err.response?.data?.message || err.message);
@@ -68,7 +68,7 @@ const ManageStudents = () => {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axios.post(`${import.meta.env.AWS_BACKEND_BASE_URL}api/students`, newStudent);
+            const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}api/students`, newStudent);
             setStudents([...students, response.data]);
             setNewStudent({ rollNumber: "", name: "", className: "", section: "", parentPhone: "" });
             setShowForm(false);

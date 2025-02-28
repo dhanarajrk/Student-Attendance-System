@@ -18,7 +18,7 @@ const RollCall = ({ students, selectedSubject  }) => {    //students represents 
   const markAttendance = async (studentId, status) => {
   
     try {
-      await axios.post(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/attendance`, {
+      await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/attendance`, {
         studentId,
         rollNumber: currentStudent.rollNumber,  
         name: currentStudent.name,

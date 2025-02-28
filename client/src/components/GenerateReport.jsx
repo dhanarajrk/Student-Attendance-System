@@ -29,7 +29,7 @@ const GenerateReport = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.get(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/reports`, {
+      const response = await axios.get(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/reports`, {
         params: {
           className: selectedClass,
           section: selectedSection,
@@ -64,7 +64,7 @@ const GenerateReport = () => {
     try {
       const studentIds = lowAttendanceStudents.map((student) => student.reportStudentId);     //fetched report includes property called reportStundentId: for each student. Just check report.js
      
-      const response = await axios.post(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/sms/send-bulk`, {
+      const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/sms/send-bulk`, {
         studentIds,
         message,
       });

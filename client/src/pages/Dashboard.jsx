@@ -22,7 +22,7 @@ function Dashboard() {
 
     const handleConfirm = async() =>{
        try{
-        const response = await axios.get(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/students`, {
+        const response = await axios.get(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/students`, {
           params: { className: selectedClass, section: selectedSection }          //get sends without body but sends as params directly in URL eg. http://localhost:5000/api/students?className=10&section=A%26B
         }); 
         console.log("Students:", response.data);
