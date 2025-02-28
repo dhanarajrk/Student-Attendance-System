@@ -3,7 +3,7 @@ name: Deploy to AWS EC2
 on:
   push:
     branches:
-      - main  # Runs this workflow when code is pushed to the main branch
+      - main
 
 jobs:
   deploy:
@@ -19,7 +19,11 @@ jobs:
           chmod 600 private_key.pem
 
           ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@${{ secrets.AWS_HOST }} << 'EOF'
-            cd ~/Student-Attendence-Management-System
+            # Ensure project directory exists
+            if [ ! -d "/home/ubuntu/Student-Attendance-System" ]; then
+              git clone https://github.com/dhanarajrk/Student-Attendance-System.git /home/ubuntu/Student-Attendance-System
+            fi
+            cd /home/ubuntu/Student-Attendance-System
             git pull origin main
             docker-compose down
             docker-compose up -d --build
