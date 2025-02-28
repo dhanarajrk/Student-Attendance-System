@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({         //instead of typing "http://localhost:5000/api" everytime, we can just request like api.get("/auth/login") but make sure to import api from "./axiosInstance"; I mean Import the configured instance with named "api"
-  baseURL: "http://localhost:5000/api",
+  baseURL: "http://localhost:5000/api", //this is just default local backend base url before AWS instance 
   headers: {
     "Content-Type": "application/json",
   },

@@ -22,9 +22,9 @@ function Dashboard() {
 
     const handleConfirm = async() =>{
        try{
-        const response = await axios.get("http://localhost:5000/api/students", {
+        const response = await axios.get(`${import.meta.env.AWS_BACKEND_BASE_URL}/api/students`, {
           params: { className: selectedClass, section: selectedSection }          //get sends without body but sends as params directly in URL eg. http://localhost:5000/api/students?className=10&section=A%26B
-        });
+        }); 
         console.log("Students:", response.data);
         if(response.data){
           setStudents(response.data);  // Store/Set students in Zustand global store so that it will be used for listing, or generating reports
