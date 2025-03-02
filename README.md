@@ -1,7 +1,5 @@
-Here’s a **clean and well-organized README** in **Markdown format** with a space for **screenshots**:  
-
 ```markdown
-# 📋 MERN Stack Student Attendance Management System
+# MERN Stack Student Attendance Management System
 
 A **Student Attendance Management System** built with the **MERN stack** (MongoDB, Express, React, Node.js) and deployed on **AWS EC2 using Docker**. This project enables efficient attendance tracking, reporting, and management for educational institutions.
 
