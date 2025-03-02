@@ -14,19 +14,19 @@ _User-friendly login form with JWT authentication._
 
 ---
 
-### 2. **Student Roll Call Page**
+2. **Student Roll Call Page**
 ![Student Roll Call Page](screenshots/roll-call-page.png)  
 _Mark students as present or absent one by one with an easy-to-use interface._
 
 ---
 
-### 3. **Manage Students Page**
+3. **Manage Students Page**
 ![Manage Students Page](screenshots/manage-students-page.png)  
 _Add, edit, and delete students class-wise and section-wise._
 
 ---
 
-### 4. **Attendance Report Page**
+4. **Attendance Report Page**
 ![Attendance Report Page](screenshots/attendance-report-page.png)  
 _View attendance reports with warning signs for low attendance and options to download CSV or send SMS._
 
