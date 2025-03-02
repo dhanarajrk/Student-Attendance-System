@@ -8,7 +8,7 @@ A **Student Attendance Management System** built with the **MERN stack** (MongoD
 
 ## 📸 Screenshots
 
-### 1. **Login Page**
+## 1. **Login Page**
 ![Login Page](screenshots/login-page.png)  
 _User-friendly login form with JWT authentication._
 
