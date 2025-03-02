@@ -157,9 +157,7 @@ npm install
 
 ## 📝 **To-Do**
 
-- [ ] Add role-based access control.  
-- [ ] Implement automated backups.  
-- [ ] Improve UI/UX for mobile devices.  
+- [ ] Improve UI/UX for mobile devices. 
 
 ---
 
