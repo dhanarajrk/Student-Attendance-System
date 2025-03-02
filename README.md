@@ -121,8 +121,8 @@ npm install
 
 ## 🖥 **Run the Project Locally**
 
-- **Backend:** `cd backend` → `npm start`  
-- **Frontend:** `cd client` → `npm start`  
+- **Backend:** `cd backend` → `node server.js`  
+- **Frontend:** `cd client` → `npm run dev`  
 
 ---
 
@@ -176,4 +176,3 @@ Feel free to open an issue or submit a pull request if you have any suggestions!
 ---
 
 **Happy Coding! 🚀**
-```
