@@ -9,25 +9,25 @@ A **Student Attendance Management System** built with the **MERN stack** (MongoD
 ## 📸 Screenshots
 
 1. **Login Page**
-![Login Page](screenshots/login-page.png)  
+![Login Page](screenshots/login-page.PNG)  
 _User-friendly login form with JWT authentication._
 
 ---
 
 2. **Student Roll Call Page**
-![Student Roll Call Page](screenshots/roll-call-page.png)  
+![Student Roll Call Page](screenshots/roll-call-page.PNG)  
 _Mark students as present or absent one by one with an easy-to-use interface._
 
 ---
 
 3. **Manage Students Page**
-![Manage Students Page](screenshots/manage-students-page.png)  
+![Manage Students Page](screenshots/manage-students-page.PNG)  
 _Add, edit, and delete students class-wise and section-wise._
 
 ---
 
 4. **Attendance Report Page**
-![Attendance Report Page](screenshots/attendance-report-page.png)  
+![Attendance Report Page](screenshots/attendance-report-page.PNG)  
 _View attendance reports with warning signs for low attendance and options to download CSV or send SMS._
 
 ---
