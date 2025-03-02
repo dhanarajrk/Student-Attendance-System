@@ -1,5 +1,4 @@
-```markdown
-# MERN Stack Student Attendance Management System
+# 📋 MERN Stack Student Attendance Management System
 
 A **Student Attendance Management System** built with the **MERN stack** (MongoDB, Express, React, Node.js) and deployed on **AWS EC2 using Docker**. This project enables efficient attendance tracking, reporting, and management for educational institutions.
 
@@ -161,5 +160,3 @@ Feel free to open an issue or submit a pull request if you have any suggestions!
 
 **Happy Coding! 🚀**
 ```
-
----
