@@ -43,7 +43,7 @@ A **Student Attendance Management System** built with the **MERN stack** (MongoD
 ## 🛠 **Tech Stack**
 
 - **Frontend:** React, Tailwind CSS, Zustand  
-- **Backend:** Node.js, Express, MongoDB Atlas  
+- **Backend:** Node.js, Express, MongoDB Atlas, JWT, Twilio
 - **State Management:** Zustand  
 - **Deployment:** AWS EC2, Docker, GitHub Actions  
 - **Version Control:** Git & GitHub  
