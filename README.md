@@ -101,8 +101,8 @@ VITE_AWS_BACKEND_BASE_URL=http://16.16.247.128
 
 ### **1. Clone the repository**
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/dhanarajrk/Student-Attendance-System
+cd Student-Attendance-System
 ```
 
 ### **2. Install Dependencies**
