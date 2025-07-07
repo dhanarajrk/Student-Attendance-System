@@ -95,6 +95,9 @@ const GenerateReport = () => {
           <option value="">Select Class</option>
           <option value="10">Class 10</option>
           <option value="9">Class 9</option>
+          <option value="8">Class 8</option>
+          <option value="7">Class 7</option>
+          <option value="6">Class 6</option>
         </select>
       </div>
 
@@ -109,6 +112,7 @@ const GenerateReport = () => {
           <option value="">Select Section</option>
           <option value="A">Section A</option>
           <option value="B">Section B</option>
+          <option value="C">Section C</option>
         </select>
       </div>
 

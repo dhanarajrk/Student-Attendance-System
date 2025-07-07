@@ -25,6 +25,12 @@ const useStudentStore = create((set) => ({
       return state; 
     }),
 
+    resetRollCall: () => set({   //reset current index and attendanceRecords (for new class/section fetch)
+      currentStudentIndex: 0,
+      attendanceRecords: {},
+    }),
+  
+    
 }));
 
 export default useStudentStore;
