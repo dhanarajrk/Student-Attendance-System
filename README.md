@@ -2,7 +2,7 @@
 
 A **Student Attendance Management System** built with the **MERN stack** (MongoDB, Express, React, Node.js) and deployed on **AWS EC2 using Docker**. This project enables efficient attendance tracking, reporting, and management for educational institutions.
 
-**🌐 [Live Demo](http://16.16.247.128)** — Visit the live version hosted on **AWS EC2**! 🚀
+**🌐 [Live Demo](http://13.62.67.161/)** — Visit the live version hosted on **AWS EC2**! 🚀
 
 DM me on [Instagram](https://www.instagram.com/dhanaraj_rk_) to get testing purpose credentials
 
