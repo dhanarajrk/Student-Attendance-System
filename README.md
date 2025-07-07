@@ -131,7 +131,7 @@ npm install
 ## ☁️ **AWS EC2 Deployment Summary**
 
 1. **Hosted on:** AWS EC2 using Docker containers.  
-2. **Public URL:** [http://16.16.247.128](http://16.16.247.128)  
+2. **Public URL:** [http://13.62.67.161](http://13.62.67.161)  
 3. **Deployment Method:** Built and deployed Docker containers directly on the EC2 instance.  
 
 ---

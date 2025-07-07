@@ -84,7 +84,7 @@ function Dashboard() {
             transition={{ duration: 1 }}
             className="text-3xl font-bold mb-6 text-blue-400"
           >
-            Welcome to the Dashboard
+            Student Attendance Management
           </motion.h1>
   
           {activeMenu === 'rollCall' && (
