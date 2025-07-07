@@ -8,25 +8,61 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+        
       - name: Set up SSH & Deploy
         run: |
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-
+          
           ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@${{ secrets.AWS_HOST }} << 'EOF'
-            # Ensure project directory exists
-            if [ ! -d "/home/ubuntu/Student-Attendance-System" ]; then
-              git clone https://github.com/dhanarajrk/Student-Attendance-System.git /home/ubuntu/Student-Attendance-System
-            fi
-            cd /home/ubuntu/Student-Attendance-System
-            git pull origin main
+          set -e  # Exit on any error
+          
+          # Check disk space before deployment
+          echo "=== Checking disk space ==="
+          df -h
+          
+          # Clean up Docker to free space
+          echo "=== Cleaning up Docker ==="
+          docker system prune -f
+          docker image prune -a -f
+          
+          # Check available space after cleanup
+          echo "=== Disk space after cleanup ==="
+          df -h
+          
+          # Ensure project directory exists
+          if [ ! -d "/home/ubuntu/Student-Attendance-System" ]; then
+            git clone https://github.com/dhanarajrk/Student-Attendance-System.git /home/ubuntu/Student-Attendance-System
+          fi
+          
+          cd /home/ubuntu/Student-Attendance-System
+          
+          # Pull latest changes
+          git pull origin main
+          
+          # Stop existing containers
+          docker-compose down
+          
+          # Build and start with error handling
+          echo "=== Starting Docker build ==="
+          if ! docker-compose up -d --build; then
+            echo "=== Docker build failed, cleaning up ==="
             docker-compose down
-            docker-compose up -d --build
+            docker system prune -f
+            exit 1
+          fi
+          
+          # Verify deployment
+          echo "=== Verifying deployment ==="
+          docker-compose ps
+          
+          # Final disk space check
+          echo "=== Final disk space ==="
+          df -h
           EOF
-
+          
           rm -f private_key.pem
