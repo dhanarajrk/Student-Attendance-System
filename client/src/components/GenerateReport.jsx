@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { saveAs } from "file-saver";
 import Papa from "papaparse";
 import { AlertTriangle } from "lucide-react";
+import api from "../api/axios.js";
 
 const GenerateReport = () => {
   const [reports, setReports] = useState([]);
@@ -29,7 +29,7 @@ const GenerateReport = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.get(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/reports`, {
+      const response = await api.get("/reports", {  //axios default api address concatenate with /reports   Final result: https://localhost:5000/api/reports
         params: {
           className: selectedClass,
           section: selectedSection,
@@ -64,7 +64,7 @@ const GenerateReport = () => {
     try {
       const studentIds = lowAttendanceStudents.map((student) => student.reportStudentId);     //fetched report includes property called reportStundentId: for each student. Just check report.js
      
-      const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/sms/send-bulk`, {
+      const response = await api.post("/sms/send-bulk", {
         studentIds,
         message,
       });

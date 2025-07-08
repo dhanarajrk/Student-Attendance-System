@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import axios from "axios";
 import useStudentStore from '../store/studentStore.js';
 import RollCall from '../components/RollCall.jsx';
 import ManageStudents from '../components/ManageStudents.jsx';
 import { useNavigate } from "react-router-dom";
 import GenerateReport from '../components/GenerateReport.jsx';
+import api from "../api/axios.js";
 
 //extra animation design imports:
 import { motion } from 'framer-motion';
@@ -23,7 +23,7 @@ function Dashboard() {
 
   const handleConfirm = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/students`, {
+      const response = await api.get("/students", {
         params: { className: selectedClass, section: selectedSection }  //get sends without body but sends as params directly in URL eg. http://localhost:5000/api/students?className=10&section=A%26B
       });
       console.log("Students:", response.data);

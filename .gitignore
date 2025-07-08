@@ -7,6 +7,7 @@ client/node_modules/
 .env
 backend/.env
 client/.env
+client/.env.local
 
 # Ignore build and cache files
 dist/

@@ -1,6 +1,6 @@
 import React from "react";
 import useStudentStore from "../store/studentStore";
-import axios from "axios"; // Assuming you have an axios instance configured
+import api from "../api/axios.js"; // I have an axios instance configured in ../api/axios.js
 import { motion, AnimatePresence } from "framer-motion";
 
 const RollCall = ({ students, selectedSubject  }) => {    //students represents list of students, selectedSubject as name tells itself are  passed from Dashboard.jsx 
@@ -18,7 +18,7 @@ const RollCall = ({ students, selectedSubject  }) => {    //students represents 
   const markAttendance = async (studentId, status) => {
   
     try {
-      await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/attendance`, {
+      await api.post("/attendance", {
         studentId,
         rollNumber: currentStudent.rollNumber,  
         name: currentStudent.name,

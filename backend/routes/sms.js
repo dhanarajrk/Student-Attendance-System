@@ -9,12 +9,12 @@ const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TO
 
 //Send bulk SMS
 router.post("/send-bulk", async(req, res) =>{
+    
     const {studentIds, message} = req.body;
     console.log("Received body:", req.body);
 
     try{
         const students = await Student.find({ _id: { $in: studentIds}}); //find StudentIds in bulk at once
-
         //I am using Promise.all to send SMS in parallel
         const results = await Promise.all(
             students.map(async(student) => {

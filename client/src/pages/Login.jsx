@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from "../api/axios.js";
 
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
     const handleLogin = async(e) => {
         e.preventDefault();
         try{
-          const response = await axios.post(`${import.meta.env.VITE_AWS_BACKEND_BASE_URL}/api/auth/login`, 
+          const response = await api.post("/auth/login", 
           {
             email,
             password, 
