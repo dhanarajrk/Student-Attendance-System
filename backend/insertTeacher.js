@@ -13,9 +13,9 @@ async function insertTeacher() {
     */
   
     const teacher = new Teacher({
-      name: "Sarviya",
-      email: "sarviya@gmail.com",
-      password: "sarviya123",
+      name: "admin1",
+      email: "admin1@gmail.com",
+      password: "admin123",
     });
 
     await teacher.save();
